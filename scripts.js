@@ -31,7 +31,7 @@ searchForm.addEventListener("click", fetchResults);
 // ! FETCH & PROMISE (catFacts)
 function fetchResults() {
     // console.log(e);              
-    event.preventDefault();                 //? FIXME -  Why is preventDefault not working "scripts.js:27 Uncaught TypeError: Cannot read property 'preventDefault' of undefined at fetchResults (scripts.js:27) at scripts.js:41"
+    event.preventDefault();                 
     
     fetch(baseURL)
         .then(function (result) {
@@ -55,7 +55,7 @@ function displayResults(json) {
     //     section.removeChild(section.firstChild);
     // }
 
-git
+
     json.forEach(e => {
         console.log(e);
         let catObject = document.createElement("li");
@@ -70,7 +70,7 @@ git
         let catObjectFour = document.createElement("li");
         let catObjectFive = document.createElement("li");
 
-        catObjectOne.innerText = `First shared on: ${catFacts[0].updatedAt}`;
+        catObjectOne.innerText = `First shared on: ${catObject[0].updatedAt}`;
         catObjectTwo.innerText = `First shared on: ${catObject[1].updatedAt}`;
         catObjectThree.innerText = `First shared on: ${catObject[2].updatedAt}`;
         catObjectFour.innerText = `First shared on: ${catObject[3].updatedAt}`;
